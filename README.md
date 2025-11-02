@@ -4,6 +4,11 @@ A Bloom filter is a probabilistic set membership structure that tracks whether e
 ## Mathematical Basis
 ![formulas](img/formulas.jpeg)
 
+# Bloom Filter Usage
+## CLI mode
+```bash
+python3 Blockchain/Bloom_Filter.py 123a 123a 456lin
+```
 123a: already present
 456fish: checked in
 ```
