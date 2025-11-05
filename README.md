@@ -2,9 +2,8 @@
 A Bloom filter is a probabilistic set membership structure that tracks whether elements have been seen. It guarantees no false negatives while allowing a tunable false positive rate. This script ingests user IDs, hashes each with a double-hashing scheme derived from SHA-256, and flips the corresponding bits in a large bytearray to record check-ins.
 
 ## Mathematical Basis
-- Bit-array size: \( m = \lceil - (n \ln p) / (\ln 2)^2 \rceil \)
-- Hash functions: \( k = \max\{1, \lceil (m / n) \ln 2 \rceil \} \)
-- Resulting false-positive probability: \( (1 - e^{-kn/m})^k \approx p \)
+![Uploading image.png…]()
+
 
 # Bloom Filter Usage
 ## CLI mode
