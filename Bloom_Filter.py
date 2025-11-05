@@ -13,6 +13,7 @@ class BloomFilter:
         self.p = false_positive_rate
         self.m = self._optimal_bit_size()
         self.k = self._optimal_hash_count()
+        self.bits = bytearray((self.m + 7) // 8)
 
     def _optimal_bit_size(self) -> int:
         return math.ceil(-(self.n * math.log(self.p)) / (math.log(2) ** 2))
