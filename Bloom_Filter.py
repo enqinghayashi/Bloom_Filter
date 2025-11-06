@@ -21,6 +21,13 @@ class BloomFilter:
     def _optimal_hash_count(self) -> int:
         return max(1, math.ceil((self.m / self.n) * math.log(2)))
 
+    def _hashes(self, item: ItemType) -> Iterable[int]:
+        if isinstance(item, str):
+            data = item.encode("utf-8")
+        elif isinstance(item, (bytes, bytearray)):
+            data = bytes(item)
+        else:
+            data = str(item).encode("utf-8")
 
 
 
