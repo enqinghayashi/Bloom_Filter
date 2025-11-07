@@ -28,6 +28,11 @@ class BloomFilter:
             data = bytes(item)
         else:
             data = str(item).encode("utf-8")
+        digest = hashlib.sha256(data).digest()
+        h1 = int.from_bytes(digest[:16], "big")
+        h2 = int.from_bytes(digest[16:], "big") or 1
+        for i in range(self.k):
+            yield (h1 + i * h2) % self.m
 
 
 
