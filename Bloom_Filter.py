@@ -34,6 +34,9 @@ class BloomFilter:
         for i in range(self.k):
             yield (h1 + i * h2) % self.m
 
+    def add(self, item: ItemType) -> None:
+        for idx in self._hashes(item):
+            self.bits[idx // 8] |= 1 << (idx % 8)
 
 
 
