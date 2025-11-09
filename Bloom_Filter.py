@@ -38,5 +38,10 @@ class BloomFilter:
         for idx in self._hashes(item):
             self.bits[idx // 8] |= 1 << (idx % 8)
 
+    def might_contain(self, item: ItemType) -> bool:
+        return all(
+            self.bits[idx // 8] & (1 << (idx % 8))
+            for idx in self._hashes(item)
+        )
 
 
