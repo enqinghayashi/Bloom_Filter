@@ -44,4 +44,9 @@ class BloomFilter:
             for idx in self._hashes(item)
         )
 
+    def check_in_and_sign(self, item: ItemType) -> bool:
+        if self.might_contain(item):
+            return False
+        self.add(item)
+        return True
 
