@@ -50,3 +50,7 @@ class BloomFilter:
         self.add(item)
         return True
 
+if __name__ == "__main__":
+    bf = BloomFilter(expected_items=100_000_000, false_positive_rate=0.01)
+    ids = sys.argv[1:]
+    if not ids:
