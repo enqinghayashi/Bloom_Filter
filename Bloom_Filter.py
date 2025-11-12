@@ -54,3 +54,15 @@ if __name__ == "__main__":
     bf = BloomFilter(expected_items=100_000_000, false_positive_rate=0.01)
     ids = sys.argv[1:]
     if not ids:
+        ids = []
+        print("Enter IDs(letters+numbers)* one per line (type 'confirm' to finish):")
+        try:
+            while True:
+                entry = input("ID> ").strip()
+                if entry.lower() == "confirm":
+                    break
+                if entry:
+                    ids.append(entry)
+        except KeyboardInterrupt:
+            print("\nInput cancelled; exiting.")
+            sys.exit(1)
