@@ -66,3 +66,8 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("\nInput cancelled; exiting.")
             sys.exit(1)
+        if not ids:
+            print("No IDs provided; exiting.")
+            sys.exit(1)
+    for uid in ids:
+        print(f"{uid}: {'checked in' if bf.check_in_and_sign(uid) else 'already present'}")
