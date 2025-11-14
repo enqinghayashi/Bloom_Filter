@@ -9,6 +9,18 @@ A Bloom filter is a probabilistic set membership structure that tracks whether e
 ```bash
 python3 Blockchain/Bloom_Filter.py 123a 123a 456lin
 ```
+## Interactive mode
+```text
+python3 Blockchain/Bloom_Filter.py
+Enter IDs one per line (type 'confirm' to finish):
+ID> 123a
+ID> 123a
+ID> 456fish
+ID> confirm
+```
+Sample output:
+```text
+123a: checked in
 123a: already present
 456fish: checked in
 ```
